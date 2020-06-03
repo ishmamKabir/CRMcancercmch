@@ -14,7 +14,8 @@ class DoctorDetails extends React.Component {
 
   renderImg = () => {
     if(this.props.doctor.image !== null){
-      return <img src={this.props.doctor.image} alt="profile"/>
+      let Link = `https://www.cancercmch.xyz/${file}`
+      return <img src={Link} alt="profile"/>
     }else {
       return <img src={profileImg} alt='profile'/>
     }

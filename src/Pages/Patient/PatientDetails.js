@@ -16,7 +16,8 @@ class PatientDetails extends React.Component {
 
   renderImg = () => {
     if(this.props.patient.patient_image !== null){
-      return <img src={this.props.patient.patient_image} alt="profile"/>
+      let Link = `https://www.cancercmch.xyz/${file}`
+      return <img src={Link} alt="profile"/>
     }else {
       return <img src={profileImg} alt='profile'/>
     }
@@ -24,7 +25,7 @@ class PatientDetails extends React.Component {
 
   renderFile = (file, text) => {
     if(file !== null){
-      let Link = `http://165.22.221.119/${file}`
+      let Link = `https://www.cancercmch.xyz/${file}`
       return <p> <a style={{fontSize:"1.6rem"}}href={Link}><i class="file alternate outline icon" ></i>{text}</a></p>
     }
   }
