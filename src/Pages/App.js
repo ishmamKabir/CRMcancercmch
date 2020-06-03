@@ -1,5 +1,6 @@
 import React from 'react';
-import { Router, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 import DashBoard from './Home/Dashboard';
 import Login from './Authentication/Login'
 import * as actions from '../actions/auth';
