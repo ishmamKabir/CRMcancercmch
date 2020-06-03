@@ -1,0 +1,196 @@
+.head{
+    position: fixed;
+}
+
+.personal--details{
+    background-color: $color-white;
+    padding: 4rem;
+    position: fixed;
+    width: 20%;
+    max-width: 18%;
+    border-radius: 2rem;
+    font-size: 1.6rem;
+    margin-top: 10rem;
+
+    & label {
+        font-weight: bolder;
+    }
+    & img {
+        height: 15rem;
+        width: 15rem;
+        object-fit: cover;
+        border-radius: 500rem;
+        margin: 0 auto;
+        text-align: center;
+        border: 1px solid $color-tertiary-dark;
+    }
+ }
+ 
+
+ .medical--details{
+    background-color: $color-white;
+    padding: 4rem;
+    margin-left: 24%;
+    max-width: 75%;
+    border-radius: 2rem;
+    margin-top: 10rem;
+
+    & label {
+        font-weight: bolder;
+    }
+
+    &__segment:not(:first-child){
+        padding-top: 2rem ;
+    }
+    &__subSegment{
+        border: 1px solid $color-tertiary-dark;
+        border-radius: 1.45rem;
+        padding: 1.5rem;
+        margin: 2rem 0;
+    }
+ }
+ 
+
+ .medical--form {
+    background-color: $color-white;
+    padding: 4rem;
+    margin-left: 26.5%;
+    max-width: 72%;
+    border-radius: 2rem;
+    font-size: 1.6rem;
+    margin-top: 5rem;
+
+    & .label {
+        padding-left: 1rem;
+        font-weight: bolder;
+    }
+    
+    &__subSegment{
+        border: 1px solid $color-tertiary-dark;
+        border-radius: .5rem;
+        padding: 1.7rem;
+        margin: 2rem 0;
+    }
+
+ }
+.personal--form{
+    background-color: $color-white;
+    padding: 2.5rem;
+    position: fixed;
+    width: 20%;
+    border-radius: 2rem;
+    font-size: 1.6rem;
+    & label {
+        font-weight: bolder;
+    }
+
+}
+
+
+.doctor--details{
+    background-color: $color-white;
+    padding: 4rem;
+    border-radius: 2rem;
+    height: 60rem;
+    font-size: 2rem;
+    margin-top: 1.6rem;
+    position: relative;
+
+    &__paragraph {
+        text-align: right;
+        position: absolute;
+        right: 4rem;
+        top: 50%;
+        line-height: 150%;
+        transform: translateY(-50%);
+    }
+    &__paragraph p {
+        padding: .6rem 0rem;
+    }
+    & label {
+        font-weight: bolder;
+    }
+    & img {
+        position: absolute;
+        left: 4rem;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 50rem;
+        width: 50rem;
+        display: inline-block;
+        object-fit: cover;
+        border-radius: 500rem;
+        margin: 0 auto;
+        text-align: center;
+        border: 1px solid $color-tertiary-dark;
+    }
+ }
+ 
+
+ .doctor--form{
+    background-color: $color-white;
+    padding: 4rem;
+    border-radius: 2rem;
+    font-size: 1.6rem;
+    margin-top: 1.6rem;
+    & img {
+        max-height: 30rem;
+        max-width: 30rem;
+        display: inline-block;
+        object-fit: cover;
+        border-radius: 500rem;
+        margin: 0 auto;
+        text-align: center;
+        border: 1px solid $color-tertiary-dark;
+    }
+    
+ }
+
+ .doctor--input{
+    font-size: 1.6rem;
+    & .label {
+        padding-left: 1rem;
+        font-weight: bolder;
+    }
+ }
+
+
+ .staff--details{
+    background-color: $color-white;
+    padding: 4rem;
+    border-radius: 2rem;
+    height: 60rem;
+    font-size: 1.6rem;
+    margin-top: 1.6rem;
+    position: relative;
+
+    &__paragraph {
+        text-align: right;
+        position: absolute;
+        right: 4rem;
+        top: 50%;
+        line-height: 150%;
+        transform: translateY(-50%);
+    }
+    &__paragraph p {
+        font-size: 1.8rem;
+        padding: .6rem 0rem;
+        & label {
+            font-weight: bolder;
+        }
+    }
+    & img {
+        position: absolute;
+        left: 4rem;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 50rem;
+        width: 50rem;
+        display: inline-block;
+        object-fit: cover;
+        border-radius: 500rem;
+        margin: 0 auto;
+        text-align: center;
+        border: 1px solid $color-tertiary-dark;
+    }
+ }

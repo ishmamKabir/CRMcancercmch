@@ -1,0 +1,52 @@
+.btn {
+    &,
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1rem 4rem;
+        display: inline-block;
+        border-radius: 1rem;
+        transition: all .2s;
+        font-size: $default-font-size;
+        box-shadow: 0 .25rem 1rem rgba($color-black,.2);
+
+
+
+        //Change for the <button> element
+        border: none;
+        cursor: pointer;
+    }
+    
+ 
+    &:focus {
+        outline: none;
+        transform: translateY(-1px);
+    }
+    
+    &--white {
+        background-color: $color-white;
+        color: $color-tertiary-dark;
+        border: 1px solid $color-tertiary-dark;
+    }
+
+    &--blue {
+        background-color: $color-tertiary-dark;
+        color: $color-white;
+    }
+    
+}
+
+.btn-text {
+    &:link,
+    &:visited {
+        font-size: $default-font-size;
+        color: $color-tertiary-dark;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid $color-tertiary-dark;
+        padding: 3px;
+        transition: all .2s;
+    }
+
+}

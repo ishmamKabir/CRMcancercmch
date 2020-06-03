@@ -1,0 +1,24 @@
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/button";
+@import "components/form";
+@import "components/search";
+@import "components/details";
+
+@import "layout/grid";
+@import "layout/navigation";
+
+@import "pages/login";
+@import "pages/patient";
+@import "pages/dashboard";
+@import "pages/ward";
+@import "pages/all";
+
+

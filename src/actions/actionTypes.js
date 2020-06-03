@@ -1,0 +1,40 @@
+export const AUTH_START = 'AUTH_START';
+export const AUTH_SUCCESS = 'AUTH_SUCCESS';
+export const AUTH_FAIL = 'AUTH_FAIL';
+export const AUTH_LOGOUT = 'AUTH_LOGOUT';
+
+//PATIENT ACTIONS
+export const ADD_PATIENT='ADD_PATIENT'
+export const FETCH_PATIENTS='FETCH_PATIENTS'
+export const FETCH_PATIENT='FETCH_PATIENT'
+export const EDIT_PATIENT='EDIT_PATIENT'
+
+//DOCTOR ACTIONS
+
+export const ADD_DOCTOR='ADD_DOCTOR'
+export const FETCH_DOCTORS='FETCH_DOCTORS'
+export const FETCH_DOCTOR='FETCH_DOCTOR'
+export const EDIT_DOCTOR='EDIT_DOCTOR'
+
+//STAFF ACTIONS
+export const ADD_STAFF='ADD_STAFF'
+export const FETCH_STAFFS='FETCH_STAFFS'
+export const FETCH_STAFF='FETCH_STAFF'
+export const EDIT_STAFF='EDIT_STAFF'
+
+//WARD ACTIONS
+export const ADD_WARD='ADD_WARD'
+export const FETCH_WARDS='FETCH_WARDS'
+export const FETCH_WARD='FETCH_WARD'
+export const EDIT_WARD='EDIT_WARD'
+export const DELETE_WARD='DELETE_WARD'
+
+//NOTICE ACTIONS
+export const FETCH_NOTICES='FETCH_NOTICES'
+
+export const FETCH_ROSTER='FETCH_ROSTER'
+
+
+
+
+export const COUNT='COUNT'
