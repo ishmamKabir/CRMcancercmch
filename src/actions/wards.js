@@ -1,11 +1,10 @@
 import wards from '../apis/api';
 import history from '../history';
 import * as actionTypes from './actionTypes';
-import Axios from 'axios';
 
 
 export const addWard = (formValues, firstname, lastname, phone, reg, sex, Age, patientid) => async (dispatch) => {
-  const response = await Axios.post('/wardcreate', { ...formValues ,firstname, lastname, phone, reg, sex, Age, patientid});
+  const response = await wards.post('/wardcreate', { ...formValues ,firstname, lastname, phone, reg, sex, Age, patientid});
 
   dispatch({ type: actionTypes.ADD_WARD, payload: response.data });
   history.push('/ward/details');
@@ -17,7 +16,7 @@ export const fetchWards = (page, fName, LName, Age, Contact, regNum) => async di
   if(Age === undefined){ Age=""}
   if(Contact === undefined){ Contact=""}
   if(regNum === undefined){ regNum=""}
-  const response = await Axios.get(`/wardlist?search=${fName} ${LName} ${Age} ${Contact} ${regNum}&page=${page}`);
+  const response = await wards.get(`/wardlist?search=${fName} ${LName} ${Age} ${Contact} ${regNum}&page=${page}`);
 
   dispatch({ type: actionTypes.FETCH_WARDS, payload: response.data });
 };
@@ -36,7 +35,7 @@ export const editWard = (id, formValues) => async dispatch => {
 };
 
 export const deleteWard = id => async dispatch => {
-  await Axios.delete(`/${id}/warddelete/`);
+  await wards.delete(`/${id}/warddelete/`);
 
   dispatch({ type: actionTypes.DELETE_WARD, payload: id });
   history.push('/ward/details');

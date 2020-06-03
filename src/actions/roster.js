@@ -1,8 +1,8 @@
 import * as actionTypes from './actionTypes';
-import Axios from 'axios';
+import roster from '../apis/api';
 
 export const fetchRoster = () => async dispatch => {
-  const response = await Axios.get('/roster');
+  const response = await roster.get('/roster');
 
   dispatch({ type: actionTypes.FETCH_ROSTER, payload: response.data });
   
