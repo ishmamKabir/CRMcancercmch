@@ -10,7 +10,7 @@ class StaffAdd extends React.Component {
 
 
     onSubmit = formValues => {
-        this.props.addStaff( formValues);
+        this.props.addStaff(formValues);
       };
     render(){
           return(

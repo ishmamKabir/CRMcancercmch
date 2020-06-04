@@ -3,6 +3,10 @@ import {Field, reduxForm } from 'redux-form';
 
 class StaffForm extends React.Component {
 
+    state = {
+      image : null,
+    };
+
     renderError({ error, touched }) {
         if (touched && error) {
           return (
