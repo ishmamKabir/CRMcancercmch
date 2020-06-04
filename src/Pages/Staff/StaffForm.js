@@ -35,7 +35,6 @@ class StaffForm extends React.Component {
   
 
     onSubmit = formValues => {
-      console.log(this.state.image);
       let form_data = new FormData();
       if(this.state.image !== null){
         form_data.append('image', this.state.image, this.state.image.name);
