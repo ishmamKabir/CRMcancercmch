@@ -43,7 +43,7 @@
    
   .wrapper .sidebar .social_media{
     position: absolute;
-    bottom: 0;
+    bottom: 0rem;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -64,3 +64,20 @@
     cursor: pointer;
   }
   
+.creator {
+  margin: 0.2rem;
+  padding: .5rem ;
+  color: $color-tertiary-dark;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 1px solid $color-tertiary-dark;  
+
+  &__heading {
+    line-height: 1.3;
+    &--main {
+      display: block;
+
+    }
+  }
+}

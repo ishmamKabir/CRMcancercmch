@@ -56,7 +56,6 @@ class WardDetails extends React.Component {
       const Contact = formValues.PhoneNumber;
       const regNum = formValues.RegistrationNumber
       this.props.fetchWards(1, fName, LName, Age, Contact, regNum);
-
   }
 
 
@@ -78,6 +77,7 @@ class WardDetails extends React.Component {
 
 
     renderList1 = () => {
+      this.props.fetchWards(1);
         return this.props.wards.map(data => {
                 return (
                     <tr  key={data.id}   >
@@ -132,11 +132,9 @@ class WardDetails extends React.Component {
       const sex = this.props.patient[0].sex
       const Age = this.props.patient[0].Age
       const patientid = this.props.patient[0].id
-  
-      
       this.props.addWard(formValues, firstname, lastname, Phone, reg, sex, Age, patientid );
       this.setState({modal1:false, modal2:false});
-      this.props.fetchWards(1);
+      this.props.reset();
      } 
 
     renderContent=()=>{
@@ -167,8 +165,6 @@ class WardDetails extends React.Component {
     next = (id) => {
       this.setState({modal1:false, modal2:true});
       this.props.fetchPatient(id);
-
-      
     }
 
     YesDelete = (id) => {
@@ -256,15 +252,15 @@ renderActions =() => {
 const validate = formValues => {
   const errors = {};
 
-  if (formValues.wardNumber !== "1" && formValues.wardNumber!=="2") {
-    errors.wardNumber= 'You must enter a Ward Number of 1 or 2';
+  if (formValues.wardnum !== "1" && formValues.wardnum!=="2") {
+    errors.wardnum= 'You must enter a ward number of 1 or 2';
   }
 
-  if (!formValues.wardNumber) {
-    errors.wardNumber= 'You must enter a Ward Number';
+  if (!formValues.wardnum) {
+    errors.wardnum= 'You must enter a ward number';
   }
-  if (!formValues.bedNumber) {
-    errors.bedNumber= 'You must enter a Bed Number';
+  if (!formValues.bednum) {
+    errors.bednum= 'You must enter a bed number';
   }
 
 

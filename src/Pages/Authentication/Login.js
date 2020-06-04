@@ -2,6 +2,8 @@ import React from 'react';
 import {Field, reduxForm } from 'redux-form';
 import {connect} from 'react-redux'
 
+import logo from "../chittagong-medical-college-hospital-cmch-logo-0387EE353D-seeklogo.com.png";
+
 
 
 import {authLogin, authKeepLogin} from '../../actions/auth';
@@ -67,6 +69,14 @@ class Login extends React.Component {
   render(){
     return (
       <div className="login">
+        <div className="creator">
+                  <h1 className="creator__heading">
+                    <span className="creator__heading--sub">Made By</span>
+                  <span className="creator__heading--main">Hamza Yusuff & Ishmam Kabir</span>
+                  </h1>
+        </div>
+        
+        <img style={{margin:"2rem", height:"15rem"}}  src={logo} alt="logo"/>
         <div className="login__form">
         <div class="u-margin-bottom-medium u-center-text ">
                                     <h2 class="heading-secondary">

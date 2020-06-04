@@ -37,6 +37,12 @@ class App extends React.Component {
   render(){
     return (
       <div className="background">
+        <div className="creator">
+                  <h1 className="creator__heading">
+                    <span className="creator__heading--sub">Made By</span>
+                  <span className="creator__heading--main">Hamza Yusuff & Ishmam Kabir</span>
+                  </h1>
+        </div>
         <Router history={history}>
           <div>
             <Switch>

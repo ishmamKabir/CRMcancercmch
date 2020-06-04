@@ -25,6 +25,7 @@ class Navbar extends React.Component {
                   <li><Link  to = '/roster/' >Professor Roster</Link></li>
                   <li><Link  to = '/staff/list' >Staff List</Link></li>
               </ul>
+              
               <div class="social_media">
                 <li  onClick = {this.handleInput} className= 'a'><i class="sign out icon"></i> LOGOUT</li>
               </div> 
