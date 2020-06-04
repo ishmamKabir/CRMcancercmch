@@ -28,9 +28,11 @@ export const logout = () => {
     localStorage.removeItem('expirationDate');
     localStorage.removeItem('userName');
     localStorage.removeItem('password');
-    return {
-        type: actionTypes.AUTH_LOGOUT
-    };
+    return dispatch => {
+        dispatch( {type: actionTypes.AUTH_LOGOUT});
+        history.push('/login');
+        
+    }
 }
 
 export const checkAuthTimeout = expirationTime => {
