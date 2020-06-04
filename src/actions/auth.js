@@ -1,5 +1,6 @@
 import * as actionTypes from './actionTypes';
 import history from '../history'
+import Axios from 'axios';
 
 
 export const authStart = () => {
@@ -18,16 +19,25 @@ export const authSuccess = token => {
 export const authFail = error => {
     return {
         type: actionTypes.AUTH_FAIL,
-        error: error
+        error: 'Invalid Username or Password'
     }
 }
 
 export const logout = () => {
     localStorage.removeItem('token');
+    localStorage.removeItem('expirationDate');
+    localStorage.removeItem('userName');
+    localStorage.removeItem('password');
+    return {
+        type: actionTypes.AUTH_LOGOUT
+    };
+}
+
+export const checkAuthTimeout = expirationTime => {
     return dispatch => {
-        dispatch( {type: actionTypes.AUTH_LOGOUT});
-        history.push('/login');
-        
+        setTimeout(() => {
+            dispatch(logout());
+        }, expirationTime * 1000)
     }
 }
 
@@ -48,7 +58,7 @@ export const logout = () => {
 export const authKeepLogin = (userName, password) => {
     return dispatch => {
         dispatch(authStart());
-        post('/rest-auth/login', {
+        Axios.post('https://www.cancercmch.xyz/rest-auth/login/', {
             username: userName,
             password: password
         })
@@ -95,7 +105,7 @@ export const authKeepLogin = (userName, password) => {
 export const authIsLoggedIn = (userName, password) => {
     return dispatch => {
         dispatch(authStart());
-        post('/rest-auth/login', {
+        Axios.post('https://www.cancercmch.xyz/rest-auth/login/', {
             username: userName,
             password: password
         })
@@ -120,7 +130,15 @@ export const authCheckState = () => {
         const password = localStorage.getItem('password');
         if (token === null) {
             dispatch(logout());
-        } else {
+        } else if (userName === null && password == null) {
+            const expirationDate = new Date(localStorage.getItem('expirationDate'));
+            if ( expirationDate <= new Date() ) {
+                dispatch(logout());
+            }else {
+                dispatch(authSuccess(token));
+                dispatch(checkAuthTimeout( (expirationDate.getTime() - new Date().getTime()) / 1000) );
+            }
+        }else {
             dispatch(authIsLoggedIn(userName,password));
         }
     
@@ -131,13 +149,17 @@ export const authCheckState = () => {
 export const authLogin = (userName, password) => {
     return dispatch => {
         dispatch(authStart());
-        post('/rest-auth/login', {
+        Axios.post('https://www.cancercmch.xyz/rest-auth/login/', {
             username: userName,
             password: password
         })
         .then(res=> {
             const token = res.data.key;
+            const expirationDate = new Date(new Date().getTime() + 72000 * 1000);
+            localStorage.setItem('token', token);
+            localStorage.setItem('expirationDate', expirationDate);
             dispatch(authSuccess(token));
+            dispatch(checkAuthTimeout(72000));
             history.push('/');
         })
         .catch(err => {
