@@ -73,7 +73,7 @@ class StaffList extends React.Component {
                   {data.name}
                 </td>
                 <td className="designation">{data.designation}</td>
-                <td className="number">0{data.number}</td>
+                <td className="number">{data.number}</td>
                 <td className="email">{data.machine}</td>
             </tr>
           );

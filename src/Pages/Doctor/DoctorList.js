@@ -76,7 +76,7 @@ class DoctorList extends React.Component {
                   Dr. {data.name}
                 </td>
                 <td className="designation">{data.designation}</td>
-                <td className="number">0{data.number}</td>
+                <td className="number">{data.number}</td>
                 <td className="email">{data.email}</td>
             </tr>
           );

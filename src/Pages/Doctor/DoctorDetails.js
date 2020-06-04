@@ -40,7 +40,7 @@ class DoctorDetails extends React.Component {
               <div className="doctor--details__paragraph">
               <p><label>Name:</label> {this.props.doctor.name}</p> 
               <p><label>Designation:</label> {this.props.doctor.designation}</p>
-              <p><label>Phone Number:</label> 0{this.props.doctor.number}</p>
+              <p><label>Phone Number:</label> {this.props.doctor.number}</p>
               <p><label>Gender:</label> {this.props.doctor.sex}</p>
               <p><label>Email:</label> {this.props.doctor.email}</p>
               <p><label>Address:</label> {this.props.doctor.address}</p>
