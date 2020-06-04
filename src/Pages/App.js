@@ -39,7 +39,7 @@ class App extends React.Component {
       <div className="background">
         <div className="creator">
                   <h1 className="creator__heading">
-                    <span className="creator__heading--sub">Made By</span>
+                    <span className="creator__heading--sub">Developed By</span>
                   <span className="creator__heading--main">Hamza Yusuff & Ishmam Kabir</span>
                   </h1>
         </div>
