@@ -78,7 +78,7 @@ class Login extends React.Component {
         
         <img style={{margin:"2rem", height:"15rem"}}  src={logo} alt="logo"/>
         <div className="login__form">
-        <div class="u-margin-bottom-medium u-center-text ">
+        <div className="u-margin-bottom-medium u-center-text ">
                                     <h2 class="heading-secondary">
                                         Login
                                     </h2>

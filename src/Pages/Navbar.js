@@ -15,7 +15,7 @@ class Navbar extends React.Component {
     render(){
         return(
           <div className="wrapper">
-          <div class="sidebar">
+          <div className="sidebar">
               <img src={logo} alt="logo"/>
               <ul>
                   <li><Link  to ="/" >Home</Link></li>
@@ -26,8 +26,8 @@ class Navbar extends React.Component {
                   <li><Link  to = '/staff/list' >Staff List</Link></li>
               </ul>
               
-              <div class="social_media">
-                <li  onClick = {this.handleInput} className= 'a'><i class="sign out icon"></i> LOGOUT</li>
+              <div className="social_media">
+                <li  onClick = {this.handleInput} className= 'a'><i className="sign out icon"></i> LOGOUT</li>
               </div> 
           </div>
           </div>

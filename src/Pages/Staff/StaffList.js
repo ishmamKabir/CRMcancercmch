@@ -48,7 +48,6 @@ class StaffList extends React.Component {
       const Email = formValues.Email
       this.setState({Name: Name , designation: designation, Contact:Contact, email:Email})
       this.props.fetchStaffs(1, Name,  designation, Contact, Email);
-
     }
 
     renderSearch = () => {
