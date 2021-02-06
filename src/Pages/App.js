@@ -1,11 +1,10 @@
 import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import DashBoard from './Home/Dashboard';
-import Login from './Authentication/Login'
+import Login from './Authentication/Login';
 import * as actions from '../actions/auth';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import history from '../history';
-
 
 import DoctorList from './Doctor/DoctorList';
 import DoctorAdd from './Doctor/DoctorAdd';
@@ -20,69 +19,62 @@ import StaffAdd from './Staff/StaffAdd';
 import StaffDetails from './Staff/StaffDetails';
 import StaffEdit from './Staff/StaffEdit';
 import WardDetails from './Ward/WardDetails';
-import Roster from './ProfessorRoster/roster'
+import Roster from './ProfessorRoster/roster';
 
-
-import '../sass/main.scss'
-
+import '../sass/main.scss';
 
 class App extends React.Component {
+	componentDidMount() {
+		this.props.onTryAutoSignup();
+	}
 
-
-  componentDidMount(){
-    this.props.onTryAutoSignup();
-
-  }
-
-  render(){
-    return (
-      <div className="background">
-        <div className="creator">
-                  <h1 className="creator__heading">
-                    <span className="creator__heading--sub">Developed By</span>
-                  <span className="creator__heading--main">Hamza Yusuff & Ishmam Kabir</span>
-                  </h1>
-        </div>
-        <Router history={history}>
-          <div>
-            <Switch>
-              <Route path="/" exact component={DashBoard} />
-              <Route path = '/login/' exact component ={Login}/>
-              <Route path='/patient/list' exact component={PatientList}/>
-              <Route path='/patient/add/' exact component={PatientAdd}/>
-              <Route path='/patient/details/:id/' exact component={PatientDetails}/>
-              <Route path='/patient/edit/:id/' exact component={PatientEdit}/>
-              <Route path='/doctor/list' exact component={DoctorList}/>
-              <Route path='/doctor/add/' exact component={DoctorAdd}/>
-              <Route path='/doctor/details/:id/' exact component={DoctorDetails}/>
-              <Route path='/doctor/edit/:id/' exact component={DoctorEdit}/>
-              <Route path='/staff/list' exact component={StaffList}/>
-              <Route path='/staff/add/' exact component={StaffAdd}/>
-              <Route path='/staff/details/:id/' exact component={StaffDetails}/>
-              <Route path='/staff/edit/:id/' exact component={StaffEdit}/>
-              <Route path='/ward/details' exact component={WardDetails}/>
-              <Route path='/roster/' exact component={Roster}/>
-              <Route component={() =>404}></Route>
-              
-            </Switch>
-          </div>
-        </Router>
-      </div>
-    );
-  }
+	render() {
+		return (
+			<div className='background'>
+				<div className='creator'>
+					<h1 className='creator__heading'>
+						<span className='creator__heading--sub'>Developed By</span>
+						<span className='creator__heading--main'>Hamza Yusuff & Ishmam Kabir</span>
+					</h1>
+				</div>
+				<Router history={history}>
+					<div>
+						<Switch>
+							<Route path='/' exact component={DashBoard} />
+							<Route path='/login/' exact component={Login} />
+							<Route path='/patient/list' exact component={PatientList} />
+							<Route path='/patient/add/' exact component={PatientAdd} />
+							<Route path='/patient/details/:id/' exact component={PatientDetails} />
+							<Route path='/patient/edit/:id/' exact component={PatientEdit} />
+							<Route path='/doctor/list' exact component={DoctorList} />
+							<Route path='/doctor/add/' exact component={DoctorAdd} />
+							<Route path='/doctor/details/:id/' exact component={DoctorDetails} />
+							<Route path='/doctor/edit/:id/' exact component={DoctorEdit} />
+							<Route path='/staff/list' exact component={StaffList} />
+							<Route path='/staff/add/' exact component={StaffAdd} />
+							<Route path='/staff/details/:id/' exact component={StaffDetails} />
+							<Route path='/staff/edit/:id/' exact component={StaffEdit} />
+							<Route path='/ward/details' exact component={WardDetails} />
+							<Route path='/roster/' exact component={Roster} />
+							<Route component={() => 404} />
+						</Switch>
+					</div>
+				</Router>
+			</div>
+		);
+	}
 }
 
-const mapStateToProps = state => {
-    return {
-      isAuthenticated: state.auth.token !== null
-    }
-  }
+const mapStateToProps = (state) => {
+	return {
+		isAuthenticated: state.auth.token !== null
+	};
+};
 
+const mapDispatchToProps = (dispatch) => {
+	return {
+		onTryAutoSignup: () => dispatch(actions.authCheckState())
+	};
+};
 
-const mapDispatchToProps = dispatch => {
-  return {
-    onTryAutoSignup: () => dispatch(actions.authCheckState())
-  }
-}
-
-export default connect(mapStateToProps , mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
