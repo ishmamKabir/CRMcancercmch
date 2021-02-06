@@ -31,7 +31,8 @@
 .medical--details {
 	background-color: $color-white;
 	padding: 4rem;
-	max-width: 100%;
+	margin-top: 2rem;
+	width: 100%;
 	border-radius: 2rem;
 
 	& label {
@@ -52,11 +53,9 @@
 .medical--form {
 	background-color: $color-white;
 	padding: 4rem;
-	margin-left: 26.5%;
-	max-width: 72%;
 	border-radius: 2rem;
 	font-size: 1.6rem;
-	margin-top: 5rem;
+	margin-top: 2rem;
 
 	& .label {
 		padding-left: 1rem;
@@ -73,8 +72,6 @@
 .personal--form {
 	background-color: $color-white;
 	padding: 2.5rem;
-	position: fixed;
-	width: 20%;
 	border-radius: 2rem;
 	font-size: 1.6rem;
 	& label {
